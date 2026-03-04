@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: listing-scanner
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: GATE_API_KEY
+        sync: false
+      - key: GATE_API_SECRET
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: SCAN_INTERVAL
+        value: 30
